@@ -1,8 +1,16 @@
 import React from 'react'
 
-const Items = () => {
+const Items = ({lists}) => {
   return (
-    <div>Items</div>
+    <ul className='lists'>
+    {lists.map((list) => (
+        <li className='item' key={list.id}>
+          <input type="checkbox" checked={list.checked} />
+          <label className='tittle' htmlFor=""> {list.body}</label>
+         
+    </li>  
+    ))}
+  </ul>
   )
 }
 

@@ -1,8 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Items from './Items'
 
-const List = () => {
+
+
+const List = ({lists}) => {
+  const [items, setItems] = useState(lists)
+  // console.log(items);
   return (
-    <div>List</div>
+    <>
+      <Items lists={lists} />
+    </>
   )
 }
 

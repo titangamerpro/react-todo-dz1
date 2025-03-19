@@ -7,11 +7,11 @@ export const lists = [
     {
         id:2,
         checked:false,
-        body:'Шалом2'
+        body:'Шалом'
     },
     {
         id:3,
         checked:false,
-        body:'Шалом3'
+        body:'Шалом'
     }
 ]
