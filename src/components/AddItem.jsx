@@ -2,6 +2,8 @@ import React from 'react'
 // import { FaPlus } from "react-icons/fa";
 
 const AddItem = ({handlSabmit, newItem, setNewItem} ) => {
+
+  // console.log(newItem);
    
   return (
     // <form onSubmit={handlSabmit} className="addform">
@@ -10,7 +12,7 @@ const AddItem = ({handlSabmit, newItem, setNewItem} ) => {
     //     <FaPlus className='faplus'/>
     //   </button>
     // </form>
-    <div></div>
+    <div>hello</div>
   )
 }
 

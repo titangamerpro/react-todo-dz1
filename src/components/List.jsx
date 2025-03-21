@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import Items from './Items'
 import AddItem from './AddItem'
+import SearchItems from './SearchItems'
+
 
 
 
@@ -38,8 +40,8 @@ const List = ({lists}) => {
   // console.log(setItems);
   return (
     <>
-    {/* <SearchItems/> */}
-      {/* <AddItem handlSabmit={handlSabmit} newItem={newItem} setNewItem={setNewItem}  /> */}
+    <SearchItems/>
+      <AddItem handlSabmit={handlSabmit} newItem={newItem} setNewItem={setNewItem}  />
       <Items lists={items} handleCheck={handleCheck} handlDelet={handlDelet} />
     </>
   )
