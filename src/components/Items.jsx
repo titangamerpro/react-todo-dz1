@@ -1,5 +1,5 @@
 import React from "react";
-// import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt } from "react-icons/fa";
 
 
 const Items = ({ lists, handleCheck, handlDelet }) => {
@@ -17,7 +17,7 @@ const Items = ({ lists, handleCheck, handlDelet }) => {
           <label className="tittle" htmlFor="">
             {list.body}
           </label>
-          {/* <FaTrashAlt className="trash" onClick={() => handlDelet(list.id)} /> */}
+          <FaTrashAlt className="trash" onClick={() => handlDelet(list.id)} />
         </li>
       ))}
     </ul>) : (
