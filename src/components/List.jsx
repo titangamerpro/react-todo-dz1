@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Items from './Items'
 import AddItem from './AddItem'
 import SearchItems from './SearchItems'
@@ -10,8 +10,15 @@ import SearchItems from './SearchItems'
 
 const List = ({lists}) => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todoList')) || [])
-
+ 
   const [newItem, setNewItem] = useState('')
+console.log('before load');
+
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(items))
+  }, [items])
+
+  console.log('after load');
 
   const addItem = item => {
     const id = lists.length ? lists[lists.length -1].id+1 : 1 
@@ -23,7 +30,7 @@ const List = ({lists}) => {
   const handleCheck = id => {
     const listItems = items.map(item => item.id === id ? {...item, checked: !item.checked} : item)
     setItems(listItems)
-    localStorage.setItem('todoList', JSON.stringify(listItems))
+    // localStorage.setItem('todoList', JSON.stringify(listItems))
   }
 
   const handlDelet = id => {
