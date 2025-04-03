@@ -12,13 +12,13 @@ const List = ({lists}) => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todoList')) || [])
  
   const [newItem, setNewItem] = useState('')
-console.log('before load');
+  // console.log('before load');
 
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(items))
   }, [items])
 
-  console.log('after load');
+  // console.log('after load');
 
   const addItem = item => {
     const id = lists.length ? lists[lists.length -1].id+1 : 1 
