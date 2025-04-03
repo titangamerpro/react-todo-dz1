@@ -7,7 +7,7 @@ function App() {
   // console.log(lists);
   return (
     <div>
-      <h1>To-Do list</h1>
+      <h1>Mission Control</h1>
       <main>
         <List lists={lists} />
       </main>

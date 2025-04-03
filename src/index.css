@@ -39,6 +39,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-left: 10px;
 }
 
 button {
@@ -72,11 +73,11 @@ button:focus-visible {
 .item input {
   width: 40px;
   height: 40px;
-
 }
 
 .title {
   flex: 1;
+  color: white;
 }
 
 .trash {
@@ -104,7 +105,7 @@ button:focus-visible {
 
 .searchForm input {
   padding: 10px; /* Отступ внутри поля ввода */
-  border: 1px solid #ccc; /* Рамка поля ввода */
+  border: 1px solid #cccccc; /* Рамка поля ввода */
   border-radius: 5px; /* Скругление углов */
   width: 100%; /* Ширина поля ввода */
 }
@@ -143,5 +144,5 @@ button:focus-visible {
 
 .checked {
   text-decoration: line-through;
-  color: red;
+  color: gray;
 }

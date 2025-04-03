@@ -21,8 +21,8 @@ const Items = ({ items, handleCheck, handlDelet }) => {
         </li>
       ))}
     </ul>) : (
-        <p style={{ textAlign: "center", fontSize: "35px", color: "red" }}>
-          your list is empty
+        <p style={{ textAlign: "center", fontSize: "35px", color: "green" }}>
+          Ничога нема
         </p>
          )}
     </>
