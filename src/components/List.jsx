@@ -8,11 +8,13 @@ import SearchItems from './SearchItems'
 
 
 
-const List = ({lists}) => {
+const List = () => {
   const [items, setItems] = useState(JSON.parse(localStorage.getItem('todoList')) || [])
  
   const [newItem, setNewItem] = useState('')
   // console.log('before load');
+
+  const [searchItem, setSearchItem] = useState('')
 
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(items))
@@ -21,11 +23,13 @@ const List = ({lists}) => {
   // console.log('after load');
 
   const addItem = item => {
-    const id = lists.length ? lists[lists.length -1].id+1 : 1 
-    const myNewItem = {id, checked:true, body:item}
-    const listItem = [...lists, myNewItem]
+    const id = items.length ? items[items.length -1].id+1 : 1 
+    const myNewItem = {id, checked:false, body:item}
+    const listItem = [...items, myNewItem]
     setItems(listItem)
   }
+
+  const sortItems = [...items].sort((a, b) => a.checked - b.checked)
 
   const handleCheck = id => {
     const listItems = items.map(item => item.id === id ? {...item, checked: !item.checked} : item)
@@ -40,6 +44,7 @@ const List = ({lists}) => {
 
   const handlSabmit = e => {
     e.preventDefault()
+    if (!newItem) return 
     addItem(newItem)
     setNewItem('')
   }
@@ -47,9 +52,13 @@ const List = ({lists}) => {
   // console.log(setItems);
   return (
     <>
-    <SearchItems/>
+    <SearchItems searchItem={searchItem} setSearchItem={setSearchItem} />
       <AddItem handlSabmit={handlSabmit} newItem={newItem} setNewItem={setNewItem}  />
-      <Items lists={items} handleCheck={handleCheck} handlDelet={handlDelet} />
+      <Items 
+      items={sortItems.filter(item => (item.body).toLowerCase().includes(searchItem.toLowerCase()))} 
+      setItems={setItems}
+      handleCheck={handleCheck} 
+      handlDelet={handlDelet} />
     </>
   )
 }
